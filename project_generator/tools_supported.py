@@ -34,6 +34,8 @@ class ToolsSupported:
         'iar':           'iar_arm',
         'make_gcc':      'make_gcc_arm',
         'gcc_arm':       'make_gcc_arm',
+        'armcc':         'make_armc',
+        'armclang':      'make_armclang',
         'eclipse':       'eclipse_make_gcc_arm',
         'sublime':       'sublime_make_gcc_arm',
         'sublime_text':  'sublime_make_gcc_arm',
@@ -94,5 +96,4 @@ class ToolsSupported:
             return None
 
     def get_supported(self):
-        return list(self.TOOLS_DICT.keys()) + list(self.TOOLS_ALIAS.keys())
-
+        return list(self.TOOLS_DICT.keys()) + list(self.TOOLS_ALIAS.keys() + TOOLCHAINS)

@@ -23,13 +23,13 @@ class MakefileArmclang(MakefileTool):
 
     def __init__(self, workspace, env_settings):
         MakefileTool.__init__(self, workspace, env_settings, logger)
-        # enable preprocessing linker files for GCC ARM
+        # enable preprocessing linker files for AC6
         self.workspace['preprocess_linker_file'] = True
         self.workspace['linker_extension'] = '.sct'
 
     @staticmethod
     def get_toolnames():
-        return ['make_armclang']
+        return ['armclang', 'make_armclang']
 
     @staticmethod
     def get_toolchain():

@@ -39,7 +39,9 @@ class MakefileGccArm(MakefileTool):
         """ Processes misc options specific for GCC ARM, and run generator """
         generated_projects = deepcopy(self.generated_projects)
         self.process_data_for_makefile(self.workspace)
-        generated_projects['path'], generated_projects['files']['makefile'] = self.gen_file_jinja('makefile_gcc.tmpl', self.workspace, 'Makefile', self.workspace['output_dir']['path'])
+        generated_projects['path'], generated_projects['files']['makefile'] = \
+            self.gen_file_jinja('makefile_gcc.tmpl', self.workspace, 'Makefile',
+                self.workspace['output_dir']['path'])
         return generated_projects
 
     def process_data_for_makefile(self, project_data):

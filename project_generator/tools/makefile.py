@@ -98,7 +98,6 @@ class MakefileTool(Tool, Exporter):
         self._get_libs(project_data)
         self._parse_specific_options(project_data)
 
-
         pro_def = ProGenDef()
 
         if pro_def.get_mcu_core(project_data['target'].lower()):
@@ -119,7 +118,7 @@ class MakefileTool(Tool, Exporter):
         # cwd: relpath(join(project_path, ("gcc_arm" + project)))
         # > make all
         path = dirname(self.workspace['files']['makefile'])
-        self.logging.debug("Building GCC ARM project: %s" % path)
+        self.logging.debug("Building make project: %s" % path)
 
         args = ['make']
         try:
