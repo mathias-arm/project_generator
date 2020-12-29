@@ -27,7 +27,7 @@ logger = logging.getLogger('progen.tools.cmake_armclang')
 
 class CMakeArmcc(CMake):
     def __init__(self, workspace, env_settings):
-        super().__init__(workspace, env_settings)
+        super(CMakeArmcc, self).__init__(workspace, env_settings)
         self.logging = logging
 
     @staticmethod
@@ -40,3 +40,6 @@ class CMakeArmcc(CMake):
 
     def get_template(self):
         return 'cmakelist_armcc.tmpl'
+
+    def get_workspace_template(self):
+        return 'cmakelist_armcc_workspace.tmpl'
